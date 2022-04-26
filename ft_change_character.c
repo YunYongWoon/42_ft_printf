@@ -1,41 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_change_character.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 16:08:24 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/24 00:47:15 by yoyun            ###   ########.fr       */
+/*   Created: 2022/04/24 00:47:33 by yoyun             #+#    #+#             */
+/*   Updated: 2022/04/24 00:48:24 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printf(const char *s, ...)
+int	ft_change_character(va_list ap, const char *s)
 {
-	va_list	ap;
-	int		ret_val;
-
-	va_start(ap, s);
-	ret_val = 0;
-	while (*s)
-	{
-		if (*s == '%')
-		{
-			s++;
-			if (*s == '%')
-				ret_val += write(1, s, 1);
-			else
-			{	
-				ret_val += logic_funtion(ap, s);
-				s++;
-			}
-		}
-		else
-			ret_val += write(1, *s, 1);
-		s++;
-	}
-	va_end(ap);
-	return (ret_val);
+	
 }

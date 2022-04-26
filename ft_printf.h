@@ -6,7 +6,7 @@
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:46:45 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/22 16:53:10 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/04/26 16:13:20 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 # define FT_PRINTF_H
 
 # include "ft_logic.h"
+
+int	ft_printf(const char *s, ...);
 
 #endif

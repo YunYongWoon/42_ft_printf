@@ -6,7 +6,7 @@
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:08:24 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/24 00:47:15 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/04/26 16:48:14 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,10 @@ int	ft_printf(const char *s, ...)
 			if (*s == '%')
 				ret_val += write(1, s, 1);
 			else
-			{	
-				ret_val += logic_funtion(ap, s);
-				s++;
-			}
+				ret_val += logic_function(ap, s);
 		}
 		else
-			ret_val += write(1, *s, 1);
+			ret_val += write(1, s, 1);
 		s++;
 	}
 	va_end(ap);

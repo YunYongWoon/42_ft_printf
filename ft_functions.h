@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_logic.h                                         :+:      :+:    :+:   */
+/*   ft_functions.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/22 16:51:43 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 16:14:34 by yoyun            ###   ########.fr       */
+/*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
+/*   Updated: 2022/04/26 16:11:55 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LOGIC_H
-# define FT_LOGIC_H
+#ifndef FT_FUNCTIONS_H
+# define FT_FUNCTIONS_H
 
-# include "ft_functions.h"
+# include <unistd.h>
+# include <stdarg.h>
 
-int	logic_function(va_list ap, const char *s);
+int	ft_change_character(va_list ap, const char *s);
 
 #endif

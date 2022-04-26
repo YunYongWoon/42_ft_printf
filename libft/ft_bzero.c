@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions.h                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: yoyun <yoyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 17:19:14 by yoyun            ###   ########.fr       */
+/*   Created: 2022/03/07 14:01:56 by yoyun             #+#    #+#             */
+/*   Updated: 2022/03/10 13:59:59 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*dest;
+	size_t			i;
 
-int	ft_change_character(va_list ap);
-int	ft_change_string(va_list ap);
-
-#endif
+	i = 0;
+	dest = (unsigned char *)s;
+	while (i < n)
+		dest[i++] = 0;
+}

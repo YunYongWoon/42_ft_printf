@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions.h                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: yoyun <yoyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 17:19:14 by yoyun            ###   ########.fr       */
+/*   Created: 2022/03/09 00:54:27 by yoyun             #+#    #+#             */
+/*   Updated: 2022/03/14 13:57:53 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
 
-int	ft_change_character(va_list ap);
-int	ft_change_string(va_list ap);
-
-#endif
+	i = 0;
+	while (1)
+	{
+		if (s[i] == c)
+			return ((char *)s + i);
+		if (!s[i])
+			break ;
+		i++;
+	}
+	return (0);
+}

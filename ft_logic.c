@@ -6,7 +6,7 @@
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:50:03 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 16:19:38 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/04/26 17:00:46 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 int	logic_function(va_list ap, const char *s)
 {
 	if (*s == 'c')
-		return (ft_change_character(ap, s));
-	return 0;
-	// else if (*s == 's')
-	// 	// String
+		return (ft_change_character(ap));
+	else if (*s == 's')
+		return (ft_change_string(ap));
 	// else if (*s == 'p')
 	// 	// 주소
 	// else if (*s == 'i' || *s == 'd')
@@ -33,4 +32,5 @@ int	logic_function(va_list ap, const char *s)
 	// 	// lower 16
 	// else if (*s == 'X')
 	// 	// high 16
+	return (0);
 }

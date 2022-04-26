@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions.h                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: yoyun <yoyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 17:19:14 by yoyun            ###   ########.fr       */
+/*   Created: 2022/03/11 10:43:54 by yoyun             #+#    #+#             */
+/*   Updated: 2022/03/11 10:44:30 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
-
-int	ft_change_character(va_list ap);
-int	ft_change_string(va_list ap);
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

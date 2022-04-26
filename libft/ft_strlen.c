@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions.h                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: yoyun <yoyun@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 17:19:14 by yoyun            ###   ########.fr       */
+/*   Created: 2022/03/07 12:51:52 by yoyun             #+#    #+#             */
+/*   Updated: 2022/03/10 14:03:05 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
 
-int	ft_change_character(va_list ap);
-int	ft_change_string(va_list ap);
-
-#endif
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}

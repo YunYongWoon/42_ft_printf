@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functions.h                                     :+:      :+:    :+:   */
+/*   ft_change_string.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
-/*   Updated: 2022/04/26 17:19:14 by yoyun            ###   ########.fr       */
+/*   Created: 2022/04/26 16:58:18 by yoyun             #+#    #+#             */
+/*   Updated: 2022/04/26 17:20:00 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_FUNCTIONS_H
-# define FT_FUNCTIONS_H
+#include "ft_functions.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+int	ft_change_string(va_list ap)
+{
+	char	*s;
 
-int	ft_change_character(va_list ap);
-int	ft_change_string(va_list ap);
-
-#endif
+	s = va_arg(ap, char *);
+	if (s == 0)
+		return (write(1, "(null)", 6));
+	return (write(1, s, ft_strlen(s)));
+}

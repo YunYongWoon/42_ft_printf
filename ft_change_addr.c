@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_change_hex.c                                    :+:      :+:    :+:   */
+/*   ft_change_addr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:23:42 by yoyun             #+#    #+#             */
-/*   Updated: 2022/05/18 18:06:27 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/05/18 18:08:49 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_change_func.h"
 
-static int	pf_check_int_digit(unsigned int addr)
+static int	pf_check_long_digit(unsigned long addr)
 {
 	int	count;
 
@@ -27,25 +27,25 @@ static int	pf_check_int_digit(unsigned int addr)
 	return (count);
 }
 
-static void	pf_change_hex(unsigned int input, int digit, char *hex)
+static void	pf_change_addr(unsigned long addr, int digit, char *hex)
 {
 	if (digit <= 0)
 		return ;
-	pf_change_hex(input / 16, digit - 1, hex);
-	write(1, &hex[input % 16], 1);
+	pf_change_addr(addr / 16, digit - 1, hex);
+	write(1, &hex[addr % 16], 1);
 	return ;
 }
 
-int	ft_change_hex(va_list ap, const char *c)
+int	ft_change_addr(va_list ap)
 {
-	unsigned int	input;
+	unsigned long	addr;
 	int				digit;
+	int				ret_val;
 
-	input = va_arg(ap, unsigned int);
-	digit = pf_check_int_digit(input);
-	if (*c == 'x')
-		pf_change_hex(input, digit, "0123456789abcdef");
-	else if (*c == 'X')
-		pf_change_hex(input, digit, "0123456789ABCDEF");
-	return (digit);
+	ret_val = 0;
+	addr = va_arg(ap, unsigned long);
+	ret_val += write(1, "0x", 2);
+	digit = pf_check_long_digit(addr);
+	pf_change_addr(addr, digit, "0123456789abcdef");
+	return (ret_val + digit);
 }

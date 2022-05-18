@@ -6,7 +6,7 @@
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:58:31 by yoyun             #+#    #+#             */
-/*   Updated: 2022/05/18 17:02:26 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/05/18 18:10:17 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 int	ft_change_character(va_list ap);
 int	ft_change_string(va_list ap);
 int	ft_change_hex(va_list ap, const char *c);
+int	ft_change_addr(va_list ap);
 int	ft_change_num(va_list ap);
 int	ft_change_unsigned_num(va_list ap);
 

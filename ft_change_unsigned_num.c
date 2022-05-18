@@ -6,7 +6,7 @@
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:59:14 by yoyun             #+#    #+#             */
-/*   Updated: 2022/05/18 17:05:44 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/05/18 17:22:03 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_change_unsigned_num(va_list ap)
 	int	n;
 
 	n = va_arg(ap, unsigned int);
+	if (n == 0)
+		return (write(1, "0", 1));
 	pf_print_num(n);
 	return (pf_check_num(n));
 }

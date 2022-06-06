@@ -6,7 +6,7 @@
 /*   By: yoyun <yoyun@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:59:14 by yoyun             #+#    #+#             */
-/*   Updated: 2022/05/18 17:22:03 by yoyun            ###   ########.fr       */
+/*   Updated: 2022/06/06 16:54:12 by yoyun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	pf_check_num(unsigned int num)
 
 int	ft_change_unsigned_num(va_list ap)
 {
-	int	n;
+	unsigned int	n;
 
 	n = va_arg(ap, unsigned int);
 	if (n == 0)
